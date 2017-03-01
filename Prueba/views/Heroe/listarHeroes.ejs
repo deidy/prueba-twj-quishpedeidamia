@@ -1,0 +1,44 @@
+<h1>Lista de Héroes</h1>
+
+<div class="row">
+    <div class="col-sm-9">
+        <p>Aquí se listan todos los héroes del sistema</p>
+    </div>
+    <div class="col-sm-3">
+        <a href="/CrearHeroe" class="btn btn-block btn-success">Crear Héroe</a>
+    </div>
+</div>
+
+<br>
+
+<% for(var i=0; i<heroes.length; i++){ %>
+
+<div class="row ma-margen-top-bottom ma-padding-top-bottom">
+  
+   <div class="col-sm-1"></div>
+   
+    <div class="col-sm-4">
+       <div class="text-center">
+           <h1> <%= heroes[i].nombre %> </h1>
+       </div>
+    </div>
+    
+    <div class="col-sm-1"></div>
+    
+    <div class="col-sm-5">
+        <div class="text-center" style="margin-top: 27px;">
+            <h4> <%= heroes[i].castillo %> </h4>
+            <p> <%= heroes[i].nivel %> </p>
+            <img  width="150" height="150" src="<%= heroes[i].imagen %>" alt="heroe">
+        </div>
+    </div>
+    
+    <div class="col-sm-1">
+        <a href="/Heroe/BorrarHeroe?id=<%= heroes[i].id%>" class="btn btn-danger btn-block">X</a>
+        <a href="/EditarHeroe?id=<%= heroes[i].id%>" class="btn btn-info btn-block">Edit</a>
+    </div>
+    
+</div>
+
+
+<% } %>

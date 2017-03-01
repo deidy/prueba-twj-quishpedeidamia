@@ -1,0 +1,40 @@
+<h1>Editar Poderes - <%= poderAEditar.nombre%></h1>
+  <p>¡Edita el poder de tu héroe!</p>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <form action="Poder/editarPoder" method="post">
+        <div class="form-group">
+          <label>Nombre:</label>
+          <input type="text" class="form-control" placeholder="Ingrese el nuevo Nombre del Poder" name="nombre" value="<%=poderAEditar.nombre%>">
+          <input type="hidden" name="idPoder" value="<%= poderAEditar.id %>">
+        </div>
+
+        <div class="form-group">
+          <label>Daño del Poder:</label>
+          <input type="number" min="0" max="100" class="form-control" placeholder="Ingrese el daño causado por el poder" name="danio" value="<%=poderAEditar.danio%>">
+        </div>
+    
+        <div class="form-group">
+            <label>Nivel:</label>
+            <input type="number" min="0" max="100" class="form-control" placeholder="Ingrese un nivel" name="nivel" value="<%=poderAEditar.nivel%>">
+        </div>
+    <div class="form-group">
+        <label for="">Heroe</label>
+
+        <select class="form-control" name="idHeroe">
+          <% for(var i=0; i<heroes.length; i++){ %>
+            <option value='<%=heroes[i].id%>'>
+              <%=heroes[i].nombre%>
+            </option>
+            <%  } %>
+        </select>     
+    </div>
+        
+        <button type="submit" class="btn btn-success">Editar Poder =)</button>
+        <a href="/ListarPoderes" class="btn btn-warning">Cancelar</a>
+
+      </form>
+    
+  </div>
+</div>

@@ -1,0 +1,34 @@
+  <h1>Crea Poder</h1>
+  <p>¡Registra el poder para cada héroe!</p>
+
+  <form action="Poder/crearPoder" method="post">
+    <div class="form-group">
+      <label>Nombre del Poder:</label>
+      <input type="text" class="form-control" placeholder="Ingrese el Nombre del Poder" name="nombre">
+    </div>
+
+    <div class="form-group">
+      <label>Daño del Poder:</label>
+      <input type="number" min="0" max="100" class="form-control" placeholder="Ingrese el daño causado por el poder" name="danio">
+    </div>
+    
+    <div class="form-group">
+        <label>Nivel:</label>
+        <input type="number" min="0" max="10" class="form-control" placeholder="Ingrese un nivel" name="nivel">
+    </div>
+
+   <div class="form-group">
+    <label for="">Heroe</label>
+
+    <select class="form-control" name="idHeroe">
+				<% for(var i=0; i<heroes.length; i++){ %>
+					<option value='<%=heroes[i].id%>'>
+						<%=heroes[i].nombre%>
+					</option>
+					<%  } %>
+			</select>
+    
+    </div>
+    <button type="submit" class="btn btn-success">Crear Poder :)</button>
+
+  </form>
